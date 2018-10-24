@@ -2,7 +2,7 @@ Blockly.Blocks['move_person'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("Move")
-          .appendField(new Blockly.FieldDropdown([["forward","Forward"], "move");
+          .appendField(new Blockly.FieldDropdown([["forward","Forward"]]), "move");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
