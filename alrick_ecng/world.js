@@ -1,9 +1,9 @@
-move_js()
+function move_js()
 {
   alert("forward");
 }
 
-turn_js(var val)
+function turn_js(val)
 {
   alert(val);
 }
