@@ -63,7 +63,7 @@
       var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
       try {
-        alert(code);
+        eval(code);
       } catch (e) {
         alert(e);
       }
