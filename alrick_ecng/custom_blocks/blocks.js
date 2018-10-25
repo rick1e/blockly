@@ -29,13 +29,13 @@ Blockly.Blocks['move_person'] = {
   Blockly.JavaScript['move_person'] = function(block) {
     var dropdown_move = block.getFieldValue('move');
     // TODO: Assemble JavaScript into code variable.
-    var code = dropdown_move+';\n';
+    var code = 'move_js();\n';
     return code;
   };
 
   Blockly.JavaScript['turn_person'] = function(block) {
     var dropdown_move = block.getFieldValue('turn');
     // TODO: Assemble JavaScript into code variable.
-    var code = dropdown_move+';\n';
+    var code = 'turn_js();\n';
     return code;
   };
