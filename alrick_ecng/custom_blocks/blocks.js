@@ -29,7 +29,7 @@ Blockly.Blocks['move_person'] = {
   Blockly.JavaScript['move_person'] = function(block) {
     var dropdown_move = block.getFieldValue('move');
     // TODO: Assemble JavaScript into code variable.
-    var code = dropdown_move+';\n';
+    var code = 'move_player();\n';
     return code;
   };
 
