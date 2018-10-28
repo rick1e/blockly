@@ -50,6 +50,8 @@ function clear(length,width)
         for(var j=0; j < width; j++)
         {
             colour(i,j, "white");
+            var id = i+""+j;
+            document.getElementById(id).innerHTML = "o^o";
         }
 
     }
@@ -71,6 +73,8 @@ function move_player()
 
     setTimeout(clear, start_time - 100,3,3);
     setTimeout(colour, start_time, current_x,current_y , "red");
+    var id = x+""+y;
+    document.getElementById(id).innerHTML = "o^o";
 
 }
 
