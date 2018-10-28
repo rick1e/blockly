@@ -94,7 +94,7 @@ function init()
 
 }
 
-init();
+//init();
 
 facing = 3;
 /*
