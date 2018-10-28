@@ -80,6 +80,7 @@ function move_player()
 }
 function turn_player(dir)
 {
+    start_time += 1000;
     if( dir == "left")
     {
         //turn_left();
