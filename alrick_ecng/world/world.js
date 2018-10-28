@@ -84,11 +84,13 @@ function turn_player(dir)
 {
     if( dir == "left")
     {
-        turn_left();
+        //turn_left();
+        setTimeout(turn_left,start_time-50);
     }
     if( dir == "right")
     {
-        turn_right();
+        //turn_right();
+        setTimeout(turn_right,start_time-50);
     }
     setTimeout(clear, start_time - 100,3,3);
     setTimeout(colour, start_time, current_x,current_y , "red");
