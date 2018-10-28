@@ -42,9 +42,7 @@ function colour( x,y,c)
     console.log(c);
     document.getElementById(id).style.background = c;
     document.getElementById(id).innerHTML = "o^o";
-    var deg = facing * 90;
-    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
-
+    
 }
 
 function clear(length,width)
@@ -98,11 +96,17 @@ function turn_player(dir)
 function turn_left()
 {
     facing = (facing + 4 - 1)%4;
+    var deg = facing * 90;
+    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+
 }
 
 function turn_right()
 {
     facing = (facing + 4 + 1)%4;
+    var deg = facing * 90;
+    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+
 }
 
 function init()
