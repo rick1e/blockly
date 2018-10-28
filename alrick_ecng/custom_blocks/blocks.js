@@ -16,7 +16,7 @@ Blockly.Blocks['move_person'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("Turn")
-          .appendField(new Blockly.FieldDropdown([["left","LEFT"], ["right","RIGHT"]]), "turn");
+          .appendField(new Blockly.FieldDropdown([["left","left"], ["right","right"]]), "turn");
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -36,6 +36,6 @@ Blockly.Blocks['move_person'] = {
   Blockly.JavaScript['turn_person'] = function(block) {
     var dropdown_move = block.getFieldValue('turn');
     // TODO: Assemble JavaScript into code variable.
-    var code = 'turn_js("'+dropdown_move+'");\n';
+    var code = 'turn_player("'+dropdown_move+'");\n';
     return code;
   };
