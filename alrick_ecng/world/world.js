@@ -77,7 +77,17 @@ function move_player()
     document.getElementById(id).innerHTML = "o^o";
 
 }
-
+function turn_player(dir)
+{
+    if( dir == "left")
+    {
+        turn_left();
+    }
+    if( dir == "right")
+    {
+        turn_right();
+    }
+}
 function turn_left()
 {
     facing = (facing + 4 + 1)%4;
@@ -98,7 +108,7 @@ function init()
 
 }
 
-//init();
+init();
 
 facing = 3;
 /*

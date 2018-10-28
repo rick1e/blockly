@@ -8,8 +8,8 @@
   <script src="../../javascript_compressed.js"></script>
   <script src="../../msg/js/en.js"></script>
   <script src="custom_blocks/blocks.js"></script>
-  <script src="world/world.js"></script>
   <script src="world.js"></script>
+  <link rel="stylesheet" href="world/styles.css">
   <style>
     body {
       background-color: #fff;
@@ -34,7 +34,7 @@
     <button onclick="runCode()">Run JavaScript</button>
   </p>
 
-  <div id = "block_world" onload="init()"></div>
+  <div id = "block_world"></div>
   <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
   <div id="worldDiv" style="height: 400px; width: 400px;">
     <div id="00Div" class="cellGrid" style="height: 40px; width: 40px; border:1px solid;margin : 2px"></div>
@@ -78,6 +78,8 @@
       }
     }
   </script>
+  
+  <script src="world/world.js"></script>
 
   
 
