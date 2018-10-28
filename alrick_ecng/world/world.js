@@ -73,7 +73,17 @@ function move_player()
     setTimeout(colour, start_time, current_x,current_y , "red");
 
 }
-
+function turn_player(dir)
+{
+    if( dir == "left")
+    {
+        turn_left();
+    }
+    if( dir == "right")
+    {
+        turn_right();
+    }
+}
 function turn_left()
 {
     facing = (facing + 4 + 1)%4;
