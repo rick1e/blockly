@@ -74,7 +74,7 @@ function move_player()
     setTimeout(clear, start_time - 100,3,3);
     setTimeout(colour, start_time, current_x,current_y , "red");
     var id = x+""+y;
-    document.getElementById(id).innerHTML = "o^o";
+    document.getElementById(id).innerHTML = "<p>o^o</p>";
 
 }
 function turn_player(dir)
