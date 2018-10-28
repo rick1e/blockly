@@ -97,6 +97,7 @@ function turn_left()
 {
     facing = (facing + 4 - 1)%4;
     var deg = facing * 90;
+    var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
 
 }
@@ -105,6 +106,7 @@ function turn_right()
 {
     facing = (facing + 4 + 1)%4;
     var deg = facing * 90;
+    var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
 
 }
