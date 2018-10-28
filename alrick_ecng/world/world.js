@@ -1,6 +1,6 @@
 var start = [1,1];
 var facing = 0;
-var move = [[0,-1],[1,0],[0,1],[-1,0]]
+var move = [[-1,0],[0,1],[1,0],[0,-1]]
 var start_time = 1000;
 var current_x;
 var current_y;
