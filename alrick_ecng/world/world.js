@@ -1,6 +1,6 @@
 var start = [1,1];
 var facing = 0;
-var move = [[0,1],[1,0],[0,-1],[-1,0]]
+var move = [[0,-1],[1,0],[0,1],[-1,0]]
 var start_time = 1000;
 var current_x;
 var current_y;
@@ -93,12 +93,12 @@ function turn_player(dir)
 }
 function turn_left()
 {
-    facing = (facing + 4 + 1)%4;
+    facing = (facing + 4 - 1)%4;
 }
 
 function turn_right()
 {
-    facing = (facing + 4 - 1)%4;
+    facing = (facing + 4 + 1)%4;
 }
 
 function init()
