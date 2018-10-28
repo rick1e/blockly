@@ -23,7 +23,7 @@ function createWorld(x,y)
 
     }
 
-    document.getElementById("block_world").innerHTML += text;
+    document.getElementById("block_world").innerHTML = text;
 
 }
 function validate_move(x,y)
