@@ -41,6 +41,10 @@ function colour( x,y,c)
     console.log(id);
     console.log(c);
     document.getElementById(id).style.background = c;
+    document.getElementById(id).innerHTML = "<p>o^o</p>";
+    var deg = facing * 90;
+    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+
 }
 
 function clear(length,width)
@@ -51,7 +55,7 @@ function clear(length,width)
         {
             colour(i,j, "white");
             var id = i+""+j;
-            document.getElementById(id).innerHTML = "o^o";
+            document.getElementById(id).innerHTML = "";
         }
 
     }
@@ -73,9 +77,8 @@ function move_player()
 
     setTimeout(clear, start_time - 100,3,3);
     setTimeout(colour, start_time, current_x,current_y , "red");
-    var id = x+""+y;
-    document.getElementById(id).innerHTML = "<p>o^o</p>";
-
+    
+    
 }
 function turn_player(dir)
 {
