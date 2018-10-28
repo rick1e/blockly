@@ -90,6 +90,8 @@ function turn_player(dir)
     {
         turn_right();
     }
+    setTimeout(clear, start_time - 100,3,3);
+    setTimeout(colour, start_time, current_x,current_y , "red");
 }
 function turn_left()
 {
