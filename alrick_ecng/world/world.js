@@ -104,7 +104,7 @@ function turn_player(dir)
         setTimeout(turn_right,start_time-50);
     }
     setTimeout(clear, start_time - 100,3,3);
-    setTimeout(colour, start_time, current_x,current_y , "red");
+    //setTimeout(colour, start_time, current_x,current_y , "red");
 }
 function turn_left()
 {
@@ -113,6 +113,7 @@ function turn_left()
     var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
     console.log("left facing:"+facing);
+    colour(current_x,current_y , "red");
 
 }
 
@@ -123,6 +124,7 @@ function turn_right()
     var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
     console.log("right facing:"+facing);
+    colour(current_x,current_y , "red");
 
 }
 
