@@ -1,11 +1,11 @@
-var start = [1,1];
+var start = [1,3];
 var facing = 0;
 var move = [[-1,0],[0,1],[1,0],[0,-1]]
 var start_time = 1000;
 var current_x;
 var current_y;
-var max_x = 3;
-var max_y = 3;
+var max_x = 4;
+var max_y = 4;
 
 
 function createWorld(x,y)
