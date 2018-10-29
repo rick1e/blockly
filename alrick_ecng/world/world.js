@@ -44,6 +44,7 @@ function colour( x,y,c)
     document.getElementById(id).innerHTML = "o^o";
     var deg = facing * 90;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+    console.log("colour facing:"+facing);
     
 }
 
