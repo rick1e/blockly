@@ -69,19 +69,23 @@ function clear(length,width)
 
 function move_player()
 {
+   start_time += 1000; 
+   setTimeout(clear, start_time - 100,max_x,max_y);
+   setTimeout(move_helpr, start_time);
+    
+}
+function move_helpr()
+{
     current_x += move[facing][0];
     current_y += move[facing][1];
-    
-    start_time += 1000;
-
+   
     console.log(start_time);
     console.log(current_x);
     console.log(current_y);
 
     validate_move(current_x,current_y);
 
-    setTimeout(clear, start_time - 100,3,3);
-    setTimeout(colour, start_time, current_x,current_y , "red");
+    colour(current_x,current_y , "red");
     console.log("move facing:"+facing);
     
     
