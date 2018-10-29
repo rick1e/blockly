@@ -124,7 +124,7 @@ function turn_right()
 
 function init()
 {
-    createWorld(3,3)
+    createWorld( max_x, max_y)
     current_x =  start[0];
     current_y =  start[1];
     start_time = 1000;
