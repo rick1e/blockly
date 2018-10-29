@@ -38,8 +38,8 @@ function colour( x,y,c)
     //var x = pos[0];
     //var y = pos[1];
     var id = x+""+y;
-    console.log(id);
-    console.log(c);
+    //console.log(id);
+    //console.log(c);
     document.getElementById(id).style.background = c;
     document.getElementById(id).innerHTML = "o^o";
     var deg = facing * 90;
@@ -77,6 +77,7 @@ function move_player()
 
     setTimeout(clear, start_time - 100,3,3);
     setTimeout(colour, start_time, current_x,current_y , "red");
+    console.log("move facing:"+facing);
     
     
 }
@@ -102,6 +103,7 @@ function turn_left()
     var deg = facing * 90;
     var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+    console.log("left facing:"+facing);
 
 }
 
@@ -111,6 +113,7 @@ function turn_right()
     var deg = facing * 90;
     var id = current_x+""+current_y;
     document.getElementById(id).style.transform = "rotate("+deg+"deg)";
+    console.log("right facing:"+facing);
 
 }
 
