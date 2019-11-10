@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
-  <script src="../../blockly_compressed.js"></script>
-  <script src="../../blocks_compressed.js"></script>
-  <script src="../../javascript_compressed.js"></script>
-  <script src="../../msg/js/en.js"></script>
+  <script src="../blockly_compressed.js"></script>
+  <script src="../blocks_compressed.js"></script>
+  <script src="../javascript_compressed.js"></script>
+  <script src="../msg/js/en.js"></script>
   <script src="custom_blocks/blocks.js"></script>
-  <script src="world.js"></script>
+  
+  <script src="world/levels.js"></script>
+  <!--<script src="world.js"></script>-->
   <link rel="stylesheet" href="world/styles.css">
+  
+  <link rel="stylesheet" href="world/styles2.css">
   <style>
     body {
       background-color: #fff;
@@ -25,28 +29,33 @@
   <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
     <a href="../index.html">Demos</a> &gt; Fixed Blockly</h1>
 
-  <p>This is a simple demo of injecting Blockly into a fixed-sized 'div' element.</p>
+  <p>Send instructions across space to the MARS Rover to guide it to the Mysterious Element.</p>
 
-  <p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p>
+  <!--<p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p>-->
 
   <p>
-    <button onclick="showCode()">Show JavaScript</button>
-    <button onclick="runCode()">Run JavaScript</button>
+    <button onclick="count_blocks()">TEST BUTTON</button>
+    <button onclick="reset()">RESET</button>
+    <button onclick="runCode()">Send Instructions</button>
+    <!--<button onclick="unkill()">UNkill</button>-->
   </p>
-
-  <div id = "block_world"></div>
-  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
-  <div id="worldDiv" style="height: 400px; width: 400px;">
-    <div id="00Div" class="cellGrid" style="height: 40px; width: 40px; border:1px solid;margin : 2px"></div>
-    <div id="01Div" class="cellGrid" style="height: 40px; width: 40px;border:1px solid;margin : 2px"></div>
-    <div id="02Div" class="cellGrid" style="height: 40px; width: 40px;border:1px solid;margin : 2px"></div>
+  <p> LEVEL <span id='lvlnum'></span></p>
+  <p> Blocks: <span id='blocknum'>0</span>/100</p>
+  <div id = "world_container">
     
+    <div id="worldDiv" style="height: 400px; width: 400px;">
+    </div>
   
   </div>
 
+  <!--<div id = "block_world"></div>-->
+
+  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  
   <xml id="toolbox" style="display: none">
+    
     <block type="move_person"></block>
-    <block type="turn_person"></block>
+    <!--<block type="turn_person"></block>
     <block type="logic_compare"></block>
     <block type="controls_repeat_ext"></block>
     <block type="math_number">
@@ -55,31 +64,59 @@
     <block type="math_arithmetic"></block>
     <block type="text"></block>
     <block type="text_print"></block>
+  -->
   </xml>
-
+  
   <script>
-    var demoWorkspace = Blockly.inject('blocklyDiv',
-        {media: '../../media/',
-         toolbox: document.getElementById('toolbox')});
-    
-    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
-                               demoWorkspace);
+    var demoWorkspace;
+    //function blockly_init()
+    //{
+      demoWorkspace = Blockly.inject('blocklyDiv',
+          {media: '../../media/',
+          toolbox: document.getElementById('toolbox')});
+      
+      demoWorkspace.addChangeListener(count_blocks);
+      
+      Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
+                                demoWorkspace);
+    //}
+
+    //blockly_init();
+
 
     function runCode() {
       // Generate JavaScript code and run it.
       window.LoopTrap = 1000;
       Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-      var code = "init();"+Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      var code = "init();"+Blockly.JavaScript.workspaceToCode(demoWorkspace)+"end_check();";
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
       try {
+        
         eval(code);
       } catch (e) {
         alert(e);
       }
     }
+
+    function reset()
+    {
+      Blockly.mainWorkspace.clear();
+    }
+
+    function count_blocks()
+    {
+      var count = Blockly.mainWorkspace.getAllBlocks().length;
+      document.getElementById("blocknum").innerHTML = count;
+      console.log(count);
+    }
+
+
+    
   </script>
+  <script src="world/world2.js"></script>
+
   
-  <script src="world/world.js"></script>
+  
 
   
 
